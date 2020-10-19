@@ -1,5 +1,8 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
+# Cucumber report
+/e2e/tmp/
+/e2e/ tmp/
 # compiled output
 /dist
 /tmp

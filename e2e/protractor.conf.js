@@ -25,7 +25,7 @@ exports.config = {
   framework: 'custom',
   frameworkPath: require.resolve('protractor-cucumber-framework'),
   cucumberOpts: {
-    format: 'json: tmp/results.json',
+    format: 'json:tmp/results.json',
     require: ['./src/steps/**/*.steps.ts'],
   },
   onPrepare() {
