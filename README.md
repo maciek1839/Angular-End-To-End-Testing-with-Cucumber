@@ -2,26 +2,51 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
 
-## Development server
+Tested on:
+- Chrome Version 80.0.3987.122 (Official Build) (64-bit)
+- Mozilla Firefox 68.0.2 (64-bit)
+- npm 6.9.0
+- nodejs 10.16.0
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+YouTube video [ENG]:
+- https://www.youtube.com/watch?v=5eN2BBW3SuU
 
-## Code scaffolding
+## Project setup
+Prerequisites:
+1. Node.js installed globally
+2. Install Web Manager globally
+    - https://www.npmjs.com/package/webdriver-manager
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Steps to take:
+- Install dependencies using command ``npm install`` from a root project's directory
+- Install drivers using command ``npm run webdriver-manager-update`` from package.json
+    - Be aware if you have newer versions of browsers, it is very likely that you won't start e2e tests. Be sure that browsers' version matches or install proper drivers
 
-## Build
+## Starting e2e tests
+1. Start Angular Live Development Server
+    - `npm run start`
+2. Run Protractor (run a command from the root directory)
+    - `node node_modules/protractor/bin/protractor e2e/protractor.conf.js`
+    - or use a command from `package.json` but you should install Protractor globally first 
+        - `npm run protractor-firefox`
+    
+**You can also try command `ng e2e` which combines starting the development server and Protractor*
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Drivers/Selenium server versions
+Chrome driver versions
+https://chromedriver.chromium.org/
 
-## Running unit tests
+Selenium server versions
+https://mvnrepository.com/artifact/or...
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Firefox driver versions
+https://github.com/mozilla/geckodrive...
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Troubleshooting
+### Dealing with a wrong driver version
+```
+[00:06:54] E/launcher - SessionNotCreatedError: session not created: This version of ChromeDriver only supports Chrome version 76
+```
+If you see such a message, please update the driver version in package.json command ``webdriver-manager-update`` and change `--versions.chrome` to proper one according to a page: https://chromedriver.chromium.org/
+### Wrong Chrome/Firefox version even the correct version was fetched
+Remove all the drivers and fetch again. You can use command: ``webdriver-manager clean`` or manually remove from `node_modules/protractor/node_modules/selenium`

@@ -16,7 +16,7 @@ exports.config = {
   localSeleniumStandaloneOpts:{
     port:4444,
     jvmArgs:[
-      '-Dwebdriver.chrome.driver=./node_modules/protractor/node_modules/webdriver-manager/selenium/chromedriver_76.0.3809.68.exe'
+      '-Dwebdriver.chrome.driver=./node_modules/protractor/node_modules/webdriver-manager/selenium/chromedriver_80.0.3987.106.exe'
     ]
   },
 
