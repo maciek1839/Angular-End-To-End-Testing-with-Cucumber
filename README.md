@@ -71,6 +71,12 @@ https://github.com/mozilla/geckodrive...
 ### Firefox
 ![Firefox IntelliJ config](./docs/intellij-firefox-config.PNG)
 
+## Chrome&Firefox binaries
+- Chrome
+    - https://github.com/webnicer/chrome-downloads
+- Firefox
+    - https://ftp.mozilla.org/pub/firefox/releases/ 
+
 ## Troubleshooting
 ### Dealing with a wrong driver version
 ```
