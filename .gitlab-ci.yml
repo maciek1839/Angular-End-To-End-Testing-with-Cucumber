@@ -15,6 +15,7 @@ cache:
 
 stages:
   - build
+  - test
 
 build:
   stage: build
@@ -23,4 +24,19 @@ build:
   artifacts:
     paths:
       - build/
+    expire_in: 1 day
+
+e2e:
+  stage: test
+  script:
+    - echo 'Starting Angular development Server in the background...'
+    - npm run start&
+    - chmod +x ./gitlab-pipeline/install-browsers.sh
+    - bash -x gitlab-pipeline/install-browsers.sh
+    - npm run webdriver-manager-update
+    - npm run protractor-chrome-headless
+    - npm run protractor-firefox-headless
+  artifacts:
+    paths:
+      - tmp/
     expire_in: 1 day

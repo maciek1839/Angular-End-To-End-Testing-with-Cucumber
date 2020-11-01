@@ -4,9 +4,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ![Project demo](./docs/demo.gif)
 
-Tested on:
+The latest version was tested on:
 - Chrome Version 80.0.3987.122 (Official Build) (64-bit)
-- Mozilla Firefox 68.0.2 (64-bit)
+- Mozilla Firefox 82.0.2 (64-bit)
 - npm 6.9.0
 - nodejs 10.16.0
 
@@ -39,11 +39,7 @@ Steps to take:
 1. Start Angular Live Development Server
     - `npm run start`
 2. Run Protractor (run a command from the root directory)
-    - `node node_modules/protractor/bin/protractor e2e/protractor.conf.js`
-    - or use a command from `package.json` but you should install Protractor globally first 
-        - `npm run protractor-firefox`
-    
-**You can also try command `ng e2e` which combines starting the development server and Protractor*
+    - use a command from `package.json` (is uses Protractor from node\_modules)
 
 ## Async await
 ```
@@ -70,6 +66,12 @@ https://github.com/mozilla/geckodrive...
 ![Chrome IntelliJ config](./docs/intellij-chrome-config.PNG)
 ### Firefox
 ![Firefox IntelliJ config](./docs/intellij-firefox-config.PNG)
+
+## Chrome&Firefox binaries
+- Chrome
+    - https://github.com/webnicer/chrome-downloads
+- Firefox
+    - https://ftp.mozilla.org/pub/firefox/releases/ 
 
 ## Troubleshooting
 ### Dealing with a wrong driver version

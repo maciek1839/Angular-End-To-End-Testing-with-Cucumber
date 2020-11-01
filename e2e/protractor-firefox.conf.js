@@ -18,11 +18,11 @@ exports.config = {
   localSeleniumStandaloneOpts: {
     port: 4444,
     jvmArgs: [
-      '-Dwebdriver.gecko.driver=./node_modules/protractor/node_modules/webdriver-manager/selenium/geckodriver-v0.24.0.exe'
+      '-Dwebdriver.gecko.driver=./node_modules/protractor/node_modules/webdriver-manager/selenium/geckodriver-v0.27.0.exe'
     ]
   },
 
-  directConnect: false,
+  directConnect: true,
   baseUrl: 'http://localhost:4200/',
   framework: 'custom',
   frameworkPath: require.resolve('protractor-cucumber-framework'),
